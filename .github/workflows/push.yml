@@ -23,7 +23,7 @@ jobs:
         uses: docker/build-push-action@v5
         with:
           push: true
-          tags: lionzxy/charity-frontend:latest, yustes/charity-frontend:${{ github.run_number }}
+          tags: lionzxy/charity-frontend:latest, lionzxy/charity-frontend:${{ github.run_number }}
 
       - name: Connect to Server
         uses: appleboy/ssh-action@v1.0.0
