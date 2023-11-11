@@ -1,8 +1,9 @@
-function CellImage(image){
-    console.log(image)
+function CellImage({image, index}){
+    console.log(index)
+    // console.log(image)
     return (
         <>
-            <img className='cell-image' src={image.image.imgHref} alt={image.imgAlt} />
+            <img className={`cell-image slot--${index}`} src={image.imgHref} alt={image.imgAlt} />
         </>
     )
 }

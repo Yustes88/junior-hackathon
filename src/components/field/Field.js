@@ -12,7 +12,7 @@ function Field() {
             <div className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
                 <Overlay/>
                 {shuffledImages.map((image, i) => (
-                 <CellImage key={i} image={image}/>
+                 <CellImage key={i} image={image} index={i}/>
             ))}
             </div>
         </div>
