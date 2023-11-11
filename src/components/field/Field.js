@@ -39,7 +39,7 @@ class Field extends React.Component {
         if (currentImagesState.length !== initialImages.length) {
             return
         }
-        if (!currentImagesState.every((element, index) => element === b[index])) {
+        if (!currentImagesState.every((element, index) => element === [index])) {
             return;
         }
         alert("Congrat!")
