@@ -1,7 +1,9 @@
+import Field from "./components/field/Field";
+
 function GameField() {
     return(
         <div> 
-            Game field!
+            <Field/>
         </div>
     )
 }
