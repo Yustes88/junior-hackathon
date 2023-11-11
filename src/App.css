@@ -22,4 +22,15 @@ body {
     grid-template-columns: repeat(4,var(--size));
   grid-template-rows: repeat(4,var(--size));
   }
+
+  .cell-image {
+      position: absolute;
+      width: var(--size);
+      height: var(--size);
+      transition: left .4s ease-in-out, top .4s ease-in-out;
+    }
+
+    .cell-image.correct{
+      background: var(--correct);
+    }
 }
