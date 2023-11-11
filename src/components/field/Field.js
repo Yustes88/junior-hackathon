@@ -11,18 +11,11 @@ class Field extends React.Component {
     constructor(props) {
         super(props);
 
-        let images = getImagesForDimension(DEFAULT_DIMENSION)
-
-        const randomIndex = Math.floor(Math.random() * images.length);
-        let initialImages = new Array(...images)
-        initialImages.splice(randomIndex, 1, null)
-        console.log(arrayWithValues(initialImages))
-
         this.state = {
-            dimension: DEFAULT_DIMENSION,
-            initialImages: initialImages,
-            currentImagesState: shuffle(initialImages)
+            dimension: DEFAULT_DIMENSION
         }
+
+        this.onNewGame()
     }
 
     onCellClick = (index) => {
@@ -30,6 +23,7 @@ class Field extends React.Component {
         this.setState({
             currentImagesState: newImages
         });
+        this.checkWin()
     }
 
     handleKeyDown = (event) => {
@@ -37,6 +31,40 @@ class Field extends React.Component {
         this.setState({
             currentImagesState: newImages
         });
+        this.checkWin()
+    }
+    checkWin = () => {
+        let currentImagesState = this.state.currentImagesState
+        let initialImages = this.state.initialImages
+        if (currentImagesState.length !== initialImages.length) {
+            return
+        }
+        if (!currentImagesState.every((element, index) => element === b[index])) {
+            return;
+        }
+        alert("Congrat!")
+    }
+
+    onNewGame = () => { // TODO: добавить кнопку новая игра
+        let dimension = this.state.dimension
+        let images = getImagesForDimension(dimension)
+
+        const randomIndex = Math.floor(Math.random() * images.length);
+        let initialImages = new Array(...images)
+        initialImages.splice(randomIndex, 1, null)
+        console.log(arrayWithValues(initialImages))
+
+        this.setState({
+            initialImages: initialImages,
+            currentImagesState: shuffle(initialImages)
+        })
+    }
+
+    onNewDimension = (dimension) => { // TODO: добавить селектор/инпут
+        this.setState({
+            dimension: dimension,
+        })
+        this.onNewGame()
     }
 
     componentDidMount() {
@@ -47,11 +75,11 @@ class Field extends React.Component {
         window.removeEventListener('keydown', this.handleKeyDown);
     }
 
+
     render() {
         return (
             <div className="relative">
                 <div className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
-                    <input onKeyDown={this.handleKeyDown}/>
                     <Overlay/>
                     {this.state.currentImagesState.map((image, i) => (
                         <CellImage key={i} image={image} index={i} onClick={() => {
