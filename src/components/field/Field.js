@@ -1,5 +1,5 @@
 import Overlay from "../overlay/Overlay";
-import {arrayWithValues, moveItem, moveItemByKeyboard, shuffle, useKeyPress} from "../../utils/utils";
+import {arrayWithValues, moveItem, moveItemByKeyboard, shuffle} from "../../utils/utils";
 import CellImage from "../cell/CellImage";
 import React from "react";
 import getImagesForDimension from "../../mockdata/data";
@@ -97,7 +97,8 @@ class Field extends React.Component {
                 </div>
                 <button
                     onClick={this.onNewGame}
-                >New Game!</button>
+                >New Game!
+                </button>
             </div>
         )
     }
