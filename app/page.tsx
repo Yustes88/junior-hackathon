@@ -3,11 +3,11 @@ import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
+    <main className="gap-4 p-24">
       <div className="text-white text-md">
         <Link href={'/gallery'}>Go back to gallery</Link>
       </div>
-      <div>
+      <div className='flex justify-center'>
         <GameField/>
       </div>
     </main>

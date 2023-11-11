@@ -1,3 +1,4 @@
+import shuffle from "@/utils/utils"
 import Image from "next/image"
 
 const images = [
@@ -8,77 +9,77 @@ const images = [
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/501',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/502',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/503',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/504',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/505',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/506',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/507',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/508',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/509',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/510',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/511',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/512',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/513',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      imgHref: 'https://picsum.photos/514',
       imageAlt: 'Image info'
     },
     {
       title: 'Request time off',
-      imgHref: 'https://picsum.photos/500',
+      // imgHref: 'https://picsum.photos/500',
       imageAlt: 'Image info'
     },
    
@@ -90,11 +91,13 @@ const images = [
   }
   
   export default function GameField() {
+    const shuffledArr = shuffle([...images])
+
     return (
       <>
       
-      <div className=" overflow-hidden rounded-lg bg-gray-200 shadow grid grid-cols-4 gap-2">
-        {images.map((image, actionIdx) => (
+      <div className="overflow-hidden rounded-lg bg-gray-200 w-4/5 h-4/5 shadow grid grid-cols-4">
+        {shuffledArr.map((image: any) => (
           <div
             key={image.title}
             className={classNames(
