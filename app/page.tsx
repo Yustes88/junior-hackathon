@@ -1,10 +1,14 @@
-import Image from 'next/image'
+import GameField from '@/components/GameField'
+import Link from 'next/link'
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col items-center justify-between p-24">
-      <div className='text-7xl'>
-        Hello, world!
+    <main className="p-24 flex flex-col items-center justify-center">
+      <div className="text-white text-md">
+        <Link href={'/gallery'}>Go back to gallery</Link>
+      </div>
+      <div className='flex justify-center w-3/5 h-3/5'>
+        <GameField/>
       </div>
     </main>
   )
