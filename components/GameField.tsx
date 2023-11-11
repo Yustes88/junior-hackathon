@@ -1,54 +1,87 @@
-import Link from "next/link"
+import Image from "next/image"
 
 const images = [
     {
       title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Benefits',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Schedule a one-on-one',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Payroll',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Submit an expense',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
     {
-      title: 'Training',
+      title: 'Request time off',
+      imgHref: 'https://picsum.photos/500',
+      imageAlt: 'Image info'
     },
+   
   ]
   
   //TODO: fox type
@@ -65,13 +98,11 @@ const images = [
           <div
             key={image.title}
             className={classNames(
-              'group relative bg-white p-6 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500'
+              'group relative bg-white focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-500'
             )}
           >
-            <div className="mt-8">
-              <p className="mt-2 text-sm text-gray-500">
-                Test
-              </p>
+            <div className="">
+                <img src={image.imgHref} alt={image.imageAlt} className="object-cover w-full h-full"/>
             </div>
           </div>
         ))}

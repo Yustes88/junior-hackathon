@@ -7,9 +7,6 @@ export default function Home() {
       <div className="text-white text-md">
         <Link href={'/gallery'}>Go back to gallery</Link>
       </div>
-      <div className='text-7xl'>
-        Hello, world!
-      </div>
       <div>
         <GameField/>
       </div>
