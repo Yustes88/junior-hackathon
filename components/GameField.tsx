@@ -1,3 +1,5 @@
+import Link from "next/link"
+
 const images = [
     {
       title: 'Request time off',
@@ -56,6 +58,8 @@ const images = [
   
   export default function GameField() {
     return (
+      <>
+      
       <div className=" overflow-hidden rounded-lg bg-gray-200 shadow grid grid-cols-4 gap-2">
         {images.map((image, actionIdx) => (
           <div
@@ -72,6 +76,7 @@ const images = [
           </div>
         ))}
       </div>
+      </>
     )
   }
   
