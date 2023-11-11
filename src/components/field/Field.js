@@ -11,11 +11,19 @@ class Field extends React.Component {
     constructor(props) {
         super(props);
 
-        this.state = {
-            dimension: DEFAULT_DIMENSION
-        }
+        let dimension = DEFAULT_DIMENSION
+        let images = getImagesForDimension(dimension)
 
-        this.onNewGame()
+        const randomIndex = Math.floor(Math.random() * images.length);
+        let initialImages = new Array(...images)
+        initialImages.splice(randomIndex, 1, null)
+        console.log(arrayWithValues(initialImages))
+
+        this.state = {
+            dimension: dimension,
+            initialImages: initialImages,
+            currentImagesState: shuffle(initialImages)
+        }
     }
 
     onCellClick = (index) => {
@@ -87,6 +95,9 @@ class Field extends React.Component {
                         }}/>
                     ))}
                 </div>
+                <button
+                    onClick={this.onNewGame}
+                >New Game!</button>
             </div>
         )
     }
