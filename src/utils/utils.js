@@ -1,8 +1,29 @@
 export const shuffle = (images) => {
-    const randomIndex = Math.floor(Math.random() * images.length);
     const newArr = new Array(...images)
-    newArr.splice(randomIndex, 1, {});
-    return newArr.sort(() => Math.random() -.5)
+    return newArr.sort(() => Math.random() - .5)
 }
 
-export const arrayWithValues = (images) => new Array(...images).map((image, i) => { return {...image, 'value': i}})
+export const moveItem = (images, index, dimension) => {
+    let emptyIndex = images.findIndex((image) => image === null);
+    let swap = false
+    if (index + 1 === emptyIndex && (index === 0 || (index + 1) % dimension !== 0)) {
+        swap = true
+    } else if (index - 1 === emptyIndex && (emptyIndex === 0 || (emptyIndex + 1) % dimension !== 0)) {
+        swap = true
+    } else if (index - dimension === emptyIndex) {
+        swap = true
+    } else if (index + dimension === emptyIndex) {
+        swap = true
+    }
+
+    if (swap) {
+        images[emptyIndex] = images[index]
+        images[index] = null
+    }
+    return images
+}
+
+
+export const arrayWithValues = (images) => new Array(...images).map((image, i) => {
+    return {...image, 'value': i}
+})
