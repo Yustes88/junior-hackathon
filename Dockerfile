@@ -19,7 +19,7 @@ ENV NODE_ENV production
 # remove existing files from nginx directory
 RUN rm -rf /usr/share/nginx/html/*
 # copy built assets from 'builder' stage
-COPY --from=builder /usr/src/next-nginx/out /usr/share/nginx/html
+COPY --from=builder /usr/src/next-nginx/build /usr/share/nginx/html
 # add nginx config
 COPY deploy/nginx.conf /etc/nginx/conf.d/default.conf
 # start nginx

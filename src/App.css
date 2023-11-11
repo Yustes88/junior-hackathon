@@ -1,0 +1,26 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-rgb: rgb(184, 243, 184);
+  --size: 100px;
+  --tile: rgb(4, 0, 254);
+  --correct: rgb(15, 236, 114);
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: var(--background-rgb);
+    margin: 0;
+    padding: 0;
+}
+
+
+.App {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  align-items: center;
+}
