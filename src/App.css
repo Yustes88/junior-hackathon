@@ -17,3 +17,9 @@ body {
     padding: 0;
 }
 
+@layer components {
+  .cell {
+    grid-template-columns: repeat(4,var(--size));
+  grid-template-rows: repeat(4,var(--size));
+  }
+}

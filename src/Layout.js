@@ -6,14 +6,12 @@ function Layout() {
 
     return (
       <div>
-    <div className="App w-full h-full">
       <header>
         <h1>
         Hello world!
         </h1>
       </header>
-    </div>
-        <main>
+        <main className="flex justify-center items-center">
           <Outlet location={location} />
         </main>
         <footer>Test footer</footer>
