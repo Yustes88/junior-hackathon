@@ -1,5 +1,5 @@
 import Overlay from "../overlay/Overlay";
-import {arrayWithValues, moveItem, shuffle} from "../../utils/utils";
+import {arrayWithValues, moveItem, moveItemByKeyboard, shuffle, useKeyPress} from "../../utils/utils";
 import CellImage from "../cell/CellImage";
 import React from "react";
 import getImagesForDimension from "../../mockdata/data";
@@ -32,10 +32,26 @@ class Field extends React.Component {
         });
     }
 
+    handleKeyDown = (event) => {
+        let newImages = moveItemByKeyboard(this.state.currentImagesState, event.key, this.state.dimension)
+        this.setState({
+            currentImagesState: newImages
+        });
+    }
+
+    componentDidMount() {
+        window.addEventListener('keydown', this.handleKeyDown);
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('keydown', this.handleKeyDown);
+    }
+
     render() {
         return (
             <div className="relative">
                 <div className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
+                    <input onKeyDown={this.handleKeyDown}/>
                     <Overlay/>
                     {this.state.currentImagesState.map((image, i) => (
                         <CellImage key={i} image={image} index={i} onClick={() => {

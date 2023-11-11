@@ -22,6 +22,24 @@ export const moveItem = (images, index, dimension) => {
     }
     return images
 }
+export const moveItemByKeyboard = (images, key, dimension) => {
+    let emptyIndex = images.findIndex((image) => image === null);
+    let index = null
+    if (key === 'ArrowRight') {
+        index = emptyIndex - 1
+    } else if (key === 'ArrowLeft') {
+        index = emptyIndex + 1
+    } else if (key === 'ArrowUp') {
+        index = emptyIndex + dimension
+    } else if (key === 'ArrowDown') {
+        index = emptyIndex - dimension
+    }
+
+    if (index !== null && index > 0 && index < dimension * dimension) {
+        return moveItem(images, index, dimension)
+    }
+    return images
+}
 
 
 export const arrayWithValues = (images) => new Array(...images).map((image, i) => {
