@@ -78,9 +78,7 @@ const images = [
       imageAlt: 'Image info'
     },
     {
-      title: 'Request time off',
-      // imgHref: 'https://picsum.photos/500',
-      imageAlt: 'Image info'
+      
     },
    
   ]
@@ -96,7 +94,7 @@ const images = [
     return (
       <>
       
-      <div className="overflow-hidden rounded-lg bg-gray-200 w-4/5 h-4/5 shadow grid grid-cols-4">
+      <div className="overflow-hidden bg-gray-200 w-3/5 h-3/5 shadow grid grid-cols-4">
         {shuffledArr.map((image: any) => (
           <div
             key={image.title}
