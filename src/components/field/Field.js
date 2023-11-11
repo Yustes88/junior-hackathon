@@ -1,11 +1,12 @@
 import Overlay from "../overlay/Overlay";
 import images from "../../mockdata/data";
-import shuffle from "../../utils/utils";
+import {arrayWithValues, shuffle} from "../../utils/utils";
 import CellImage from "../cell/CellImage";
 
 function Field() {
     const shuffledImages = shuffle(images)
-    console.log(shuffledImages)
+    const valuesArray = arrayWithValues(images)
+    console.log(shuffledImages, valuesArray)
 
     return(
         <div className="relative">

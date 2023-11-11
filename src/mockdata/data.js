@@ -2,12 +2,13 @@ const images = [
     {
       title: 'Request time off',
       imgHref: 'https://picsum.photos/500',
-      imageAlt: 'Image info'
+      imageAlt: 'Image info',
+      value: 0,
     },
     {
       title: 'Request time off',
       imgHref: 'https://picsum.photos/501',
-      imageAlt: 'Image info'
+      imageAlt: 'Image info',
     },
     {
       title: 'Request time off',
@@ -79,10 +80,6 @@ const images = [
       imgHref: 'https://picsum.photos/515',
       imageAlt: 'Image info'
     },
-    {
-      
-    }
-
   ]
 
   export default images;
