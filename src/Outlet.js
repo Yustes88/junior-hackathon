@@ -1,16 +1,14 @@
-import Gallery from "./Gallery";
+import Gallery from "./gallery/Gallery";
 import GameField from "./GameField";
 
 function Outlet({location}) {
     return (
       <>
-        <div>
         {
             location.pathname === '/' ?
               <GameField /> :
               <Gallery />
           }
-        </div>
       </>
     );
   }

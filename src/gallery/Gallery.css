@@ -1,0 +1,19 @@
+.gallery {
+    flex: 1;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600*/
+}
+.gallery > * {
+    height: 100px;
+    background: red;
+}
+
+.gallery-image {
+    width: 100%;
+}
+
+.gallery-image:hover {
+    border: inset blue 8px;
+}

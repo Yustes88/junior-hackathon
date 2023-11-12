@@ -2,7 +2,7 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Layout from './Layout';
 import GameField from './GameField';
-import Gallery from './Gallery';
+import Gallery from './gallery/Gallery';
 
 
 function App() {
