@@ -17,6 +17,41 @@ body {
     padding: 0;
 }
 
+@layer components {
+  .cell {
+    grid-template-columns: repeat(4,var(--size));
+  grid-template-rows: repeat(4,var(--size));
+  }
+
+  .cell-image {
+      position: absolute;
+      width: var(--size);
+      height: var(--size);
+      transition: left .4s ease-in-out, top .4s ease-in-out;
+    }
+
+    .cell-image.correct{
+      background: var(--correct);
+    }
+
+.cell-image.slot--0{left: 0px; top: 0;}
+.cell-image.slot--1{left: calc(var(--size)); top: 0;}
+.cell-image.slot--2{left: calc(2 * var(--size)); top: 0;}
+.cell-image.slot--3{left: calc(3 * var(--size)); top: 0;}
+.cell-image.slot--4{left: 0; top: calc(var(--size));}
+.cell-image.slot--5{left: calc(var(--size)); top: calc(var(--size));}
+.cell-image.slot--6{left: calc(2 * var(--size) ); top: calc(var(--size));}
+.cell-image.slot--7{left: calc(3 * var(--size)); top: calc(var(--size));}
+.cell-image.slot--8{left: 0; top: calc(2 * var(--size) );}
+.cell-image.slot--9{left: calc(var(--size)); top: calc(2 * var(--size) );}
+.cell-image.slot--10{left: calc(2 * var(--size) ); top: calc(2 * var(--size) );}
+.cell-image.slot--11{left: calc(3 * var(--size)); top: calc(2 * var(--size) );}
+.cell-image.slot--12{left: 0; top: calc(3 * var(--size));}
+.cell-image.slot--13{left: calc(var(--size)); top: calc(3 * var(--size));}
+.cell-image.slot--14{left: calc(2 * var(--size) ); top: calc(3 * var(--size));}
+.cell-image.slot--15{left: calc(3 * var(--size)); top: calc(3 * var(--size));}
+.cell-image.disabled{pointer-events: none; background-color:transparent;}
+}
 
 .App {
 }

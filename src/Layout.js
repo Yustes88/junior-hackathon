@@ -7,6 +7,12 @@ function Layout() {
 
     return (
       <div>
+      <header>
+        <h1>
+        Hello world!
+        </h1>
+      </header>
+        <main className="flex justify-center items-center">
     <div className="App">
       <Header/>
     </div>
