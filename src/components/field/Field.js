@@ -86,7 +86,7 @@ class Field extends React.Component {
 
     render() {
         return (
-            <div className="relative">
+            <div className="relative bg-gray-300">
                 <div className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
                     <Overlay/>
                     {this.state.currentImagesState.map((image, i) => (
