@@ -5,14 +5,16 @@ import ModalStart from "./components/modals/ModalStart";
 
 function Outlet({location, open, setOpen}) {
     return (
-        <>
-            <ModalStart open={open} setOpen={setOpen}/>
-            {
-                location.pathname === '/' ?
-                    <GameField/> :
-                    <Gallery/>
-            }
-        </>
+      <>
+        <div>
+          <ModalStart open={open} setOpen={setOpen}/>
+        {
+            location.pathname === '/' ?
+              <GameField/> :
+              <Gallery />
+          }
+          </div>
+      </>
     );
 }
 
