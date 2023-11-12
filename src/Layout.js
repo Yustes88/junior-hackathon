@@ -7,12 +7,12 @@ function Layout() {
 
     return (
       <div>
-      <header>
+      {/* <header>
         <h1>
         Hello world!
         </h1>
-      </header>
-        <main className="flex justify-center items-center">
+      </header> */}
+        <main className="flex justify-center items-center mt-20">
           <Outlet location={location} />
         </main>
         <footer>Test footer</footer>
