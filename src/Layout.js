@@ -18,10 +18,10 @@ function Layout() {
       {
             location.pathname === '/' ?
             <div>
-            <Button text={'Вернуться к правилам'} onClick={() => setOpen(true)}/> 
-            <Button text={'Галерея картинок'} onClick={() => navigate("/gallery")}/> 
+              <Button text={'Вернуться к правилам'} onClick={() => setOpen(true)}/> 
+              <Button text={'Галерея картинок'} onClick={() => navigate("/gallery")}/> 
             </div> :
-            null
+            <Button text={'Вернуться к игре'} onClick={() => navigate("/")}/>
           }
 
       </header>
