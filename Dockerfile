@@ -6,7 +6,7 @@ WORKDIR /usr/src/next-nginx
 # Copy the package.json file
 COPY package.json package.json
 # install project dependencies
-RUN npm install
+RUN npm install --force
 # copy project files
 # make sure to set up .dockerignore to copy only necessary files
 COPY . .

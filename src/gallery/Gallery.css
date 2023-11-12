@@ -5,9 +5,9 @@
     grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
     /* grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600*/
 }
+
 .gallery > * {
     height: 100px;
-    background: red;
 }
 
 .gallery-image {
@@ -16,4 +16,22 @@
 
 .gallery-image:hover {
     border: inset blue 8px;
+}
+
+.upload-box {
+    background: white;
+    border-style: dashed;
+    border-color: black;
+    border-width: 4px;
+}
+
+.upload-button {
+    width: 100%;
+    height: 100%;
+}
+
+.upload-button button {
+    background: transparent !important;
+    border-radius: 0 !important;
+    color: black !important;
 }

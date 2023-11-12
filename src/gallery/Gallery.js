@@ -1,6 +1,7 @@
 import React from "react";
 import GalleryPhoto from "./GalleryPhoto";
 import './Gallery.css';
+import ImageUploadingCell from "./ImageUploading";
 
 const images = Array.from({length: 50}, (_, i) => ({
     title: 'Gallery\'s image',
@@ -16,6 +17,7 @@ class Gallery extends React.Component {
 
     render() {
         return <div className="gallery">
+            <ImageUploadingCell/>
             {images.map((image, i) => (
                 <GalleryPhoto key={i} image={image} index={i} onClick={() => {
                     this.onCellClick(i)
