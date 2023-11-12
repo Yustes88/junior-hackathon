@@ -3,7 +3,7 @@ import GalleryPhoto from "./GalleryPhoto";
 import './Gallery.css';
 import ImageUploadingCell from "./ImageUploading";
 
-const images = Array.from({length: 5}, (_, i) => ({
+const images = Array.from({length: 11}, (_, i) => ({
     imgHref: 'https://charity.kulikov.uk/api/default/gallery/image?imageid=' + (i + 1)
 }))
 
