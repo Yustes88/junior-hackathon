@@ -13,10 +13,6 @@ function Layout() {
         </h1>
       </header>
         <main className="flex justify-center items-center">
-    <div className="App">
-      <Header/>
-    </div>
-        <main>
           <Outlet location={location} />
         </main>
         <footer>Test footer</footer>
