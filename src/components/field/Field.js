@@ -99,7 +99,7 @@ class Field extends React.Component {
                     </div>
                 </div>
                 <div className="mt-2 flex justify-center">
-                    <Button text={'New Game!'} onClick={this.onNewGame}/>
+                    <Button text={'Новая игра!'} onClick={this.onNewGame}/>
                 </div>
             </>
         )
