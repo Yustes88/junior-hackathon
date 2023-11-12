@@ -3,7 +3,7 @@ import {arrayWithValues, moveItem, moveItemByKeyboard, shuffle} from "../../util
 import CellImage from "../cell/CellImage";
 import React from "react";
 import getImagesForDimension from "../../mockdata/data";
-import { Button } from "../button/Button";
+import {Button} from "../button/Button";
 
 const DEFAULT_DIMENSION = 4
 
@@ -32,7 +32,7 @@ class Field extends React.Component {
         this.setState({
             currentImagesState: newImages
         });
-        this.checkWin()
+        this.checkWin(newImages)
     }
 
     handleKeyDown = (event) => {
@@ -40,15 +40,14 @@ class Field extends React.Component {
         this.setState({
             currentImagesState: newImages
         });
-        this.checkWin()
+        this.checkWin(newImages)
     }
-    checkWin = () => {
-        let currentImagesState = this.state.currentImagesState
+    checkWin = (currentImages) => {
         let initialImages = this.state.initialImages
-        if (currentImagesState.length !== initialImages.length) {
+        if (currentImages.length !== initialImages.length) {
             return
         }
-        if (!currentImagesState.every((element, index) => element === [index])) {
+        if (!currentImages.every((element, index) => element === initialImages[index])) {
             return;
         }
         alert("Congrat!")
@@ -88,19 +87,20 @@ class Field extends React.Component {
     render() {
         return (
             <>
-            <div className="relative">
-                <div className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
-                    <Overlay/>
-                    {this.state.currentImagesState.map((image, i) => (
-                        <CellImage key={i} image={image} index={i} onClick={() => {
-                            this.onCellClick(i)
-                        }}/>
+                <div className="relative">
+                    <div
+                        className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
+                        <Overlay/>
+                        {this.state.currentImagesState.map((image, i) => (
+                            <CellImage key={i} image={image} index={i} onClick={() => {
+                                this.onCellClick(i)
+                            }}/>
                         ))}
+                    </div>
                 </div>
-            </div>
-            <div className="mt-2 flex justify-center">
-             <Button text={'New Game!'} onClick={this.onNewGame}/>
-            </div>
+                <div className="mt-2 flex justify-center">
+                    <Button text={'New Game!'} onClick={this.onNewGame}/>
+                </div>
             </>
         )
     }
