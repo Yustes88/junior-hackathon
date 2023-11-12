@@ -45,7 +45,7 @@ class ImageUploadingCell extends React.Component {
                     withLabel={false}
                     withIcon={false}
                     singleImage={true}
-                    buttonText='Choose images'
+                    buttonText='Upload image'
                     onChange={this.onDrop}
                     imgExtension={['.jpg', '.png', '.jpeg']}
                     maxFileSize={5242880}
