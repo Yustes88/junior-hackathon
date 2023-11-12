@@ -3,7 +3,8 @@ import {arrayWithValues, moveItem, moveItemByKeyboard, shuffle} from "../../util
 import CellImage from "../cell/CellImage";
 import React from "react";
 import getImagesForDimension from "../../mockdata/data";
-import { Button } from "../button/Button";
+import {Button} from "../button/Button";
+import ModalWin from "../modals/ModalWin";
 
 const DEFAULT_DIMENSION = 4
 
@@ -23,7 +24,8 @@ class Field extends React.Component {
         this.state = {
             dimension: dimension,
             initialImages: initialImages,
-            currentImagesState: shuffle(initialImages)
+            currentImagesState: shuffle(initialImages),
+            modalIsOpen: false,
         }
     }
 
@@ -32,7 +34,7 @@ class Field extends React.Component {
         this.setState({
             currentImagesState: newImages
         });
-        this.checkWin()
+        this.checkWin(newImages)
     }
 
     handleKeyDown = (event) => {
@@ -40,21 +42,21 @@ class Field extends React.Component {
         this.setState({
             currentImagesState: newImages
         });
-        this.checkWin()
+        this.checkWin(newImages)
     }
-    checkWin = () => {
-        let currentImagesState = this.state.currentImagesState
+    checkWin = (currentImages) => {
         let initialImages = this.state.initialImages
-        if (currentImagesState.length !== initialImages.length) {
+        if (currentImages.length !== initialImages.length) {
             return
         }
-        if (!currentImagesState.every((element, index) => element === [index])) {
+        if (!currentImages.every((element, index) => element === initialImages[index])) {
             return;
         }
-        alert("Congrat!")
+        this.setState({modalIsOpen: true})
+
     }
 
-    onNewGame = () => { // TODO: добавить кнопку новая игра
+    onNewGame = () => { 
         let dimension = this.state.dimension
         let images = getImagesForDimension(dimension)
 
@@ -86,21 +88,25 @@ class Field extends React.Component {
 
 
     render() {
+        const modal = this.state.modalIsOpen ? <ModalWin open={this.state.modalIsOpen} setOpen={(modalIsOpen) => this.setState({modalIsOpen})} /> : <></>
+
         return (
             <>
-            <div className="relative">
-                <div className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
-                    <Overlay/>
-                    {this.state.currentImagesState.map((image, i) => (
-                        <CellImage key={i} image={image} index={i} onClick={() => {
-                            this.onCellClick(i)
-                        }}/>
+                <div className="relative">
+                    <div
+                        className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
+                        <Overlay/>
+                        {this.state.currentImagesState.map((image, i) => (
+                            <CellImage key={i} image={image} index={i} onClick={() => {
+                                this.onCellClick(i)
+                            }}/>
                         ))}
+                    </div>
                 </div>
-            </div>
-            <div className="mt-2 flex justify-center">
-             <Button text={'New Game!'} onClick={this.onNewGame}/>
-            </div>
+                {modal}
+                <div className="mt-2 flex justify-center">
+                    <Button text={'Новая игра!'} onClick={this.onNewGame}/>
+                </div>
             </>
         )
     }
