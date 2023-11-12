@@ -57,11 +57,11 @@ export default function ModalStart({open, setOpen}) {
                     <Dialog.Title as="h4" className="text-base mb-4 font-semibold leading-6 text-gray-900">
                       Вот нескольо простых правил к игре:
                     </Dialog.Title>
-<ul class="space-y-1 text-gray-500 list-inside dark:text-gray-400">
-    {Rules.map((rule, index) => (
-    <RulesItem key={index} rule = {rule}/>
-    ))}
-    </ul>
+                              <ul class="space-y-1 text-gray-500 list-inside dark:text-gray-400">
+                                  {Rules.map((rule, index) => (
+                                  <RulesItem key={index} rule = {rule}/>
+                                  ))}
+                                  </ul>
                     </div>
                   </div>
                 </div>
