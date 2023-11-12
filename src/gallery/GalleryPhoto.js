@@ -1,7 +1,8 @@
 function GalleryPhoto({image, onClick}) {
+    console.log(image)
     return (
         <div>
-            <img className='gallery-image' src={image.imgHref} alt={image.imageAlt} onClick={onClick}/>
+            <img className='gallery-image' src={image.imgHref} alt='Gallery image' onClick={onClick}/>
         </div>
     )
 }

@@ -23,7 +23,13 @@ class ImageUploadingCell extends React.Component {
             method: 'POST',
             body: formData
         }).then(res => res.json())
-            .then(json => console.log(json));
+            .then(json => {
+                    console.log(json)
+                    if (json.hasOwnProperty('imageid')) {
+                        this.props.onNewPhoto(json.imageid)
+                    }
+                }
+            );
     }
 
     render() {

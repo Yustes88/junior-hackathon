@@ -3,26 +3,44 @@ import GalleryPhoto from "./GalleryPhoto";
 import './Gallery.css';
 import ImageUploadingCell from "./ImageUploading";
 
-const images = Array.from({length: 50}, (_, i) => ({
-    title: 'Gallery\'s image',
+const images = Array.from({length: 2}, (_, i) => ({
     imgHref: 'https://picsum.photos/' + Math.round(Math.random() * 110),
-    imageAlt: 'Image for puzzle'
 }))
 
 class Gallery extends React.Component {
+
+    constructor(props) {
+        super(props);
+        this.state = {
+            uploadedImages: []
+        }
+    }
 
     onCellClick = () => {
 
     }
 
+    onNewPhoto = (imageId) => {
+        let url = 'https://charity.kulikov.uk/api/gallery/image?imageid=' + imageId
+        console.log(url)
+        this.setState(
+            {
+                uploadedImages: Array.prototype.concat.call(this.state.uploadedImages, [{
+                    imgHref: url,
+                }])
+            }
+        )
+    }
+
     render() {
         return <div className="gallery">
-            <ImageUploadingCell/>
-            {images.map((image, i) => (
-                <GalleryPhoto key={i} image={image} index={i} onClick={() => {
-                    this.onCellClick(i)
-                }}/>
-            ))}
+            <ImageUploadingCell onNewPhoto={this.onNewPhoto}/>
+            {
+                Array.prototype.concat.call(this.state.uploadedImages, images).map((image, i) => (
+                    <GalleryPhoto key={i} image={image} index={i} onClick={() => {
+                        this.onCellClick(i)
+                    }}/>
+                ))}
         </div>
     }
 }
