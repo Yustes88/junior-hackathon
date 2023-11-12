@@ -1,6 +1,6 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Transition } from '@headlessui/react'
-import { CheckIcon, PuzzlePieceIcon } from '@heroicons/react/24/outline'
+import { CheckIcon, PuzzlePieceIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import RulesItem from '../rules/RulesItem'
 import { Rules } from '../../mockdata/rules'
 
@@ -35,6 +35,14 @@ export default function ModalStart() {
             >
               <Dialog.Panel className="relative transform overflow-hidden rounded-lg bg-white px-4 pb-4 pt-5 text-left shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-sm sm:p-6">
                 <div>
+                <button
+                    type="button"
+                    onClick={() => setOpen(false)}
+                  >
+                  <div className="mx-auto flex h-12 w-12 items-center justify-center absolute top-0 right-0 rounded-full">
+                    <XMarkIcon className="h-6 w-6 text-gray" aria-hidden="true" />
+                  </div>
+                    </button> 
                   <div className="mx-auto flex h-12 w-12 items-center justify-center rounded-full bg-green-100">
                     <PuzzlePieceIcon className="h-6 w-6 text-green-600" aria-hidden="true" />
                   </div>
@@ -46,7 +54,7 @@ export default function ModalStart() {
                       Время сыграть в пазл!
                     </Dialog.Title>
                     <div className="mt-4">
-                    <Dialog.Title as="h4" className="text-base font-semibold leading-6 text-gray-900">
+                    <Dialog.Title as="h4" className="text-base mb-4 font-semibold leading-6 text-gray-900">
                       Вот нескольо простых правил к игре:
                     </Dialog.Title>
 <ul class="space-y-1 text-gray-500 list-inside dark:text-gray-400">
@@ -60,7 +68,7 @@ export default function ModalStart() {
                 <div className="mt-5 sm:mt-6">
                   <button
                     type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-indigo-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                    className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                     onClick={() => setOpen(false)}
                   >
                     Я готов!
