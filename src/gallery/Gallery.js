@@ -3,8 +3,8 @@ import GalleryPhoto from "./GalleryPhoto";
 import './Gallery.css';
 import ImageUploadingCell from "./ImageUploading";
 
-const images = Array.from({length: 2}, (_, i) => ({
-    imgHref: 'https://picsum.photos/' + Math.round(Math.random() * 110),
+const images = Array.from({length: 5}, (_, i) => ({
+    imgHref: 'https://charity.kulikov.uk/api/default/gallery/image?imageid=' + (i + 1)
 }))
 
 class Gallery extends React.Component {
