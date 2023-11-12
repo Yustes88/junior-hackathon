@@ -6,4 +6,5 @@ function getImagesForDimension(dimension) {
     }));
 }
 
+
 export default getImagesForDimension;

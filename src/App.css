@@ -4,10 +4,10 @@
 
 :root {
   --foreground-rgb: 0, 0, 0;
-  --background-rgb: rgb(184, 243, 184);
+  --background-rgb: rgb(18, 196, 181);
   --size: 100px;
   --tile: rgb(4, 0, 254);
-  --correct: rgb(15, 236, 114);
+  --correct: rgb(15, 236, 214);
 }
 
 body {
@@ -51,4 +51,7 @@ body {
 .cell-image.slot--14{left: calc(2 * var(--size) ); top: calc(3 * var(--size));}
 .cell-image.slot--15{left: calc(3 * var(--size)); top: calc(3 * var(--size));}
 .cell-image.disabled{pointer-events: none; background-color:transparent;}
+}
+
+.App {
 }

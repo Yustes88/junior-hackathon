@@ -3,6 +3,7 @@ import {arrayWithValues, moveItem, moveItemByKeyboard, shuffle} from "../../util
 import CellImage from "../cell/CellImage";
 import React from "react";
 import getImagesForDimension from "../../mockdata/data";
+import { Button } from "../button/Button";
 
 const DEFAULT_DIMENSION = 4
 
@@ -86,6 +87,7 @@ class Field extends React.Component {
 
     render() {
         return (
+            <>
             <div className="relative">
                 <div className="grid cell relative overflow-hidden rounded-sm border-4 border-solid border-gray-600">
                     <Overlay/>
@@ -93,13 +95,13 @@ class Field extends React.Component {
                         <CellImage key={i} image={image} index={i} onClick={() => {
                             this.onCellClick(i)
                         }}/>
-                    ))}
+                        ))}
                 </div>
-                <button
-                    onClick={this.onNewGame}
-                >New Game!
-                </button>
             </div>
+            <div className="mt-2 flex justify-center">
+             <Button text={'New Game!'} onClick={this.onNewGame}/>
+            </div>
+            </>
         )
     }
 }
