@@ -14,6 +14,7 @@ function Outlet({location, open, setOpen}) {
               <GameField/> :
               <Gallery />
           }
+          </div>
       </>
     );
   }
