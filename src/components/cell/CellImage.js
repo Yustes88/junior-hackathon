@@ -5,10 +5,9 @@ function CellImage({image, index, onClick}) {
             <div className={`cell-image slot--${index}`}/>
         </>
     }
-    // console.log(image)
     return (
         <>
-            <img className={`cell-image slot--${index}`} src={image.imgHref} alt={image.imageAlt} onClick={onClick}/>
+            <img className={`cell-image slot--${index} hover:brightness-15.0	`} src={image.imgHref} alt={image.imageAlt} onClick={onClick}/>
         </>
     )
 }
