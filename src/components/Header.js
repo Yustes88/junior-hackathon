@@ -1,7 +1,9 @@
+import { Button } from "./button/Button";
+
 function Header() {
     return (
-      <div className="">
-        Header
+      <div>
+        <Button text={'Вернуться к правилам'}/>
       </div>
     )
   }

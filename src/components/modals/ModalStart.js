@@ -3,9 +3,9 @@ import { Dialog, Transition } from '@headlessui/react'
 import { CheckIcon, PuzzlePieceIcon, XMarkIcon } from '@heroicons/react/24/outline'
 import RulesItem from '../rules/RulesItem'
 import { Rules } from '../../mockdata/rules'
+import { Button } from '../button/Button'
 
-export default function ModalStart() {
-  const [open, setOpen] = useState(true)
+export default function ModalStart({open, setOpen}) {
 
   return (
     <Transition.Root show={open} as={Fragment}>
@@ -65,14 +65,11 @@ export default function ModalStart() {
                     </div>
                   </div>
                 </div>
-                <div className="mt-5 sm:mt-6">
-                  <button
-                    type="button"
-                    className="inline-flex w-full justify-center rounded-md bg-green-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                <div className="mt-5 sm:mt-6 flex justify-center">
+                  <Button
+                  text={'Я готов!'}
                     onClick={() => setOpen(false)}
-                  >
-                    Я готов!
-                  </button>
+                  />
                 </div>
               </Dialog.Panel>
             </Transition.Child>

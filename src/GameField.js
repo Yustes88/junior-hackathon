@@ -1,9 +1,9 @@
 import Field from "./components/field/Field";
 
-function GameField() {
+function GameField({setOpen}) {
     return(
         <div> 
-            <Field/>
+            <Field setOpen={setOpen}/>
         </div>
     )
 }
